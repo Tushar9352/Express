@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #fafafa;
+            border-bottom: 1px solid #dbdbdb;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            height: 30px;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        .profile img {
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+            margin-right: 20px;
+        }
+        .feed {
+            padding: 20px;
+        }
+        .post {
+            border: 1px solid #dbdbdb;
+            margin-bottom: 20px;
+        }
+        .post img {
+            width: 100%;
+        }
+        .post .caption {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="street.jpg" alt="Instagram Logo">
+    </div>
+    <div class="profile">
+        <img src="World.jpg" alt="Profile Picture">
+        <div>
+            <h2><%= username %></h2>
+            <p><%= bio %></p>
+        </div>
+    </div>
+    <div class="feed">
+        <% posts.forEach(function(post) { %>
+            <div class="post">
+                <img src="<%= post.image %>" alt="Post Image">
+                <div class="caption">
+                    <p><strong><%= username %></strong> <%= post.caption %></p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>
