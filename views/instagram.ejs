@@ -45,6 +45,9 @@
         .post .caption {
             padding: 10px;
         }
+        .followers {
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -67,6 +70,14 @@
                 </div>
             </div>
         <% }); %>
+    </div>
+    <div class="followers">
+        <h3>Followers:</h3>
+        <ul>
+            <% for (let i = 0; i < followers.length; i++) { %>
+                <li><%= i + 1 %>. <%= followers[i] %></li>
+            <% } %>
+        </ul>
     </div>
 </body>
 </html>
