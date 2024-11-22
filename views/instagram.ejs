@@ -1,87 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #fafafa;
-            border-bottom: 1px solid #dbdbdb;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header img {
-            height: 30px;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-        }
-        .profile img {
-            border-radius: 50%;
-            height: 100px;
-            width: 100px;
-            margin-right: 20px;
-        }
-        .feed {
-            padding: 20px;
-        }
-        .post {
-            border: 1px solid #dbdbdb;
-            margin-bottom: 20px;
-        }
-        .post img {
-            width: 100%;
-        }
-        .post .caption {
-            padding: 10px;
-        }
-        .followers {
-            padding: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="header">
-        <img src="street.jpg" alt="Instagram Logo">
-    </div>
-    <div class="profile">
-        <img src="World.jpg" alt="Profile Picture">
+<body class="bg-gray-100 font-sans">
+  <header class="bg-white border-b border-gray-200 py-3 px-4 flex justify-between items-center">
+    <img src="/path/to/instagram-logo.png" alt="Instagram" class="h-6">
+  </header>
+
+  <div class="container mx-auto py-8">
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <div class="flex items-center p-4">
+        <img src="/path/to/profile-picture.jpg" alt="Profile Picture" class="w-20 h-20 rounded-full mr-4">
         <div>
-            <h2><%= username %></h2>
-            <p><%= bio %></p>
+          <h2 class="text-xl font-bold">username</h2>
+          <p class="text-gray-600">My reign has just begun 🤴</p>
         </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2 p-4">
+        <div class="bg-gray-200 aspect-square relative">
+          <img src="/path/to/post-image.jpg" alt="Post 1" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2">
+            <p class="text-sm">123 Likes</p>
+            <p class="text-xs">This is a sample caption.</p>
+          </div>
+        </div>
+        <!-- Add more post items here -->
+      </div>
+
+      <div class="p-4">
+        <h3 class="text-lg font-bold mb-2">Followers</h3>
+        <ul>
+          <li class="text-gray-600">1. John Doe</li>
+          <li class="text-gray-600">2. Jane Smith</li>
+          <!-- Add more follower names here -->
+        </ul>
+      </div>
     </div>
-    <div class="feed">
-        <% posts.forEach(function(post) { %>
-            <div class="post">
-                <img src="<%= post.image %>" alt="Post Image">
-                <div class="caption">
-                    <p><strong><%= username %></strong> <%= post.caption %></p>
-                </div>
-            </div>
-        <% }); %>
-    </div>
-    <div class="followers">
-        <h3>Followers:</h3>
-        <% if (typeof followers !== 'undefined') { %>
-            <ul>
-                <% for (let i = 0; i < followers.length; i++) { %>
-                    <li><%= i + 1 %>. <%= followers[i] %></li>
-                <% } %>
-            </ul>
-        <% } else { %>
-            <p>No followers to display.</p>
-        <% } %>
-    </div>
+  </div>
 </body>
 </html>

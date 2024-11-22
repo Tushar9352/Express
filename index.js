@@ -18,16 +18,15 @@ app.get('/rollDice', (req, res) => {
 });
 
 app.get('/ig/:username', (req, res) => {
+    const instaData = require('./data.json');
     const username = req.params.username;
-    const user = {
-        username: username,
-        bio: 'This is your bio',
-        posts: [
-            { image: 'post1.jpg', caption: 'First post!' },
-            { image: 'post2.jpg', caption: 'Another day, another post.' }
-        ]
-    };
-    res.render('instagram', user);
+    const user = instaData[username];
+
+    if (user) {
+        res.render('instagram', user);
+    } else {
+        res.send('User not found');
+    }
 });
 
 app.listen(port, () => {
