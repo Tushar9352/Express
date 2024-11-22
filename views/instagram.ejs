@@ -73,11 +73,15 @@
     </div>
     <div class="followers">
         <h3>Followers:</h3>
-        <ul>
-            <% for (let i = 0; i < followers.length; i++) { %>
-                <li><%= i + 1 %>. <%= followers[i] %></li>
-            <% } %>
-        </ul>
+        <% if (typeof followers !== 'undefined') { %>
+            <ul>
+                <% for (let i = 0; i < followers.length; i++) { %>
+                    <li><%= i + 1 %>. <%= followers[i] %></li>
+                <% } %>
+            </ul>
+        <% } else { %>
+            <p>No followers to display.</p>
+        <% } %>
     </div>
 </body>
 </html>
