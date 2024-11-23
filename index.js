@@ -35,11 +35,11 @@ app.get('/rollDice', (req, res) => {
 
 app.get('/ig/:username', async (req, res) => {
     const { username } = req.params;
-    console.log(`Searching for user: ${username}`);
+    console.log(`Searching for user: ${username}`); // Log the username being searched
 
     try {
         const instaData = await readData();
-        console.log('Available users:', instaData.map(u => u.username));
+        console.log('Available users:', instaData.map(u => u.username)); // Log available usernames
 
         const user = instaData.find(u => u.username === username);
 
