@@ -12,6 +12,8 @@ const port = 8080;
 app.set('view engine', 'ejs');
 app.set('views', join(__dirname, 'views'));
 
+app.use(express.static(join(__dirname, 'public')));
+
 app.get('/', (req, res) => {
     res.render('home', { title: 'Home' });
 });
@@ -27,16 +29,18 @@ app.get('/rollDice', (req, res) => {
 
 app.get('/ig/:username', (req, res) => {
     const { username } = req.params;
+    console.log(`Searching for user: ${username}`); // Log the username being searched
+    console.log('Available users:', instaData.map(u => u.username)); // Log available usernames
+
     const user = instaData.find(u => u.username === username);
 
     if (user) {
-        res.render('instagram.ejs', { title: user.username, user });
+        res.render('instagram', { title: user.username, user });
     } else {
-        res.status(404).render('error.ejs', { title: 'User Not Found', username });
+        res.status(404).render('error', { title: 'User Not Found', username });
     }
 });
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
-
