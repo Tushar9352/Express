@@ -1,7 +1,7 @@
 import express from 'express';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { promises as fs } from 'fs'; 
+import { promises as fs } from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -9,7 +9,6 @@ const __dirname = dirname(__filename);
 const app = express();
 const port = 8080;
 
-app.use(express.static("public"));
 app.set('view engine', 'ejs');
 app.set('views', join(__dirname, 'views'));
 
@@ -35,11 +34,11 @@ app.get('/rollDice', (req, res) => {
 
 app.get('/ig/:username', async (req, res) => {
     const { username } = req.params;
-    console.log(`Searching for user: ${username}`); 
+    console.log(`Searching for user: ${username}`);
 
     try {
         const instaData = await readData();
-        console.log('Available users:', instaData.map(u => u.username)); 
+        console.log('Available users:', instaData.map(u => u.username));
 
         const user = instaData.find(u => u.username === username);
 
