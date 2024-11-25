@@ -1,11 +1,11 @@
 [
   {
     "username": "john_doe",
-    "profilePicture": "/path/to/john.jpg",
+    "profilePicture": "https://example.com/images/john.jpg",
     "bio": "Just another John.",
     "posts": [
       {
-        "image": "/path/to/post1.jpg",
+        "image": "https://example.com/images/post1.jpg",
         "likes": 123,
         "caption": "First post!"
       }
@@ -14,11 +14,11 @@
   },
   {
     "username": "jane_smith",
-    "profilePicture": "/path/to/jane.jpg",
+    "profilePicture": "https://example.com/images/jane.jpg",
     "bio": "Living life to the fullest.",
     "posts": [
       {
-        "image": "/path/to/post2.jpg",
+        "image": "https://example.com/images/post2.jpg",
         "likes": 456,
         "caption": "Hello world!"
       }
