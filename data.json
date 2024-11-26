@@ -7,10 +7,32 @@
       {
         "image": "https://i.pinimg.com/474x/3a/e5/0e/3ae50eb0d74405a95fa5865988b9ba3c.jpg",
         "likes": 123,
-        "caption": "First post!"
+        "caption": "First post!",
+        "comments": [
+          {
+            "username": "jane_smith",
+            "comment": "Nice post!"
+          },
+          {
+            "username": "alice_jones",
+            "comment": "Love this!"
+          }
+        ]
+      },
+      {
+        "image": "https://i.pinimg.com/474x/4b/d6/8e/4bd68e7fb65b92bfedbcb7b3d1217063.jpg",
+        "likes": 89,
+        "caption": "Another day, another post.",
+        "comments": [
+          {
+            "username": "jane_smith",
+            "comment": "Great post!"
+          }
+        ]
       }
     ],
-    "followers": ["jane_smith", "alice_jones"]
+    "followers": ["jane_smith", "alice_jones"],
+    "following": ["jane_smith", "alice_jones"]
   },
   {
     "username": "jane_smith",
@@ -20,9 +42,27 @@
       {
         "image": "https://i.pinimg.com/236x/d9/13/0a/d9130acb8dde15608bd0dbfbe38c46bd.jpg",
         "likes": 456,
-        "caption": "Hello world!"
+        "caption": "Hello world!",
+        "comments": [
+          {
+            "username": "john_doe",
+            "comment": "Nice to see you here!"
+          }
+        ]
+      },
+      {
+        "image": "https://i.pinimg.com/474x/5a/d7/8e/5ad78e6c3dd0c7ec0fb7b5ab9b9c176d.jpg",
+        "likes": 300,
+        "caption": "Enjoying the sunshine!",
+        "comments": [
+          {
+            "username": "john_doe",
+            "comment": "Beautiful day!"
+          }
+        ]
       }
     ],
-    "followers": ["john_doe"]
+    "followers": ["john_doe"],
+    "following": ["john_doe", "alice_jones"]
   }
 ]
