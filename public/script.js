@@ -1,1 +1,1 @@
-document.addEventListener("DOMContentLoaded", function() { const modal = document.querySelector(".modal"); const profileCard = document.querySelector(".profile-card");
+document.addEventListener("DOMContentLoaded", function() { const modal = document.querySelector(".modal"); const profileCard = document.querySelector(".profile-card"); const closeButton = document.querySelector(".close"); const profileImage = document.querySelector(".modal-profile-image");
